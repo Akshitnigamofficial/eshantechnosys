@@ -1,64 +1,68 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.jsx";
+import "../styles/global.css";
+
+const services = [
+  {
+    title: "Custom Software Development",
+    img: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    short: "Tailored enterprise applications built for scalability.",
+    long: "We design and develop fully customized software solutions tailored to your business needs. Whether you're a startup or enterprise, we analyze your workflows, identify inefficiencies, and build scalable, secure, and high-performance systems. From architecture to deployment, our team ensures your product is future-ready and aligned with your long-term business goals."
+  },
+  {
+    title: "Cloud & DevOps",
+    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+    short: "Reliable cloud infrastructure and automation pipelines.",
+    long: "Our cloud and DevOps solutions ensure your infrastructure is scalable, secure, and cost-efficient. We handle cloud migrations, CI/CD pipelines, monitoring, and performance optimization. Whether you're using AWS, Azure, or GCP, we make your system resilient and production-ready."
+  },
+  {
+    title: "AI & Machine Learning",
+    img: "https://images.unsplash.com/photo-1677442135136-760c813028c0",
+    short: "Intelligent systems that automate business processes.",
+    long: "We build AI-powered systems that help you automate decision-making and extract insights from data. From predictive analytics to NLP and computer vision, we implement machine learning solutions tailored to your use case."
+  },
+  {
+    title: "Cyber Security",
+    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+    short: "Advanced protection for your systems and data.",
+    long: "Security is at the core of everything we build. We provide end-to-end cybersecurity solutions including vulnerability assessments, penetration testing, and secure architecture design to protect your business from evolving threats."
+  }
+];
 ---
 
-<BaseLayout title="Services">
-  <Navbar client:load />
+<Navbar client:load />
 
-  <section class="services-wrapper">
+<section class="services-zigzag">
 
-    <h1 class="services-title">
-      Our <span class="gradient-text">Services</span>
-    </h1>
+  <h2 class="services-heading">
+    Our <span class="gradient-text">Services</span>
+  </h2>
 
-    <p class="services-subtitle">
-      Comprehensive solutions to transform your business digitally
-    </p>
-
-    <!-- GRID -->
-    <div class="services-grid">
-
-      <!-- CARD 1 -->
-      <div class="glass squircle-lg service-card">
-        <h2>Digital Transformation</h2>
-
-        <ul>
-          <li>Enterprise Software Development</li>
-          <li>Document Management System</li>
-          <li>Business Process Management</li>
-          <li>Application Modernization</li>
-          <li>DevOps & Cloud Services</li>
-        </ul>
+  {services.map((service, i) => (
+    <div class={`service-row ${i % 2 !== 0 ? "reverse" : ""}`}>
+      
+      <!-- IMAGE -->
+      <div class="service-image">
+        <img src={service.img} alt={service.title} />
       </div>
 
-      <!-- CARD 2 -->
-      <div class="glass squircle-lg service-card">
-        <h2>AI & Machine Learning</h2>
+      <!-- CONTENT -->
+      <div class="service-content">
+        <h3>{service.title}</h3>
+        <p class="short">{service.short}</p>
 
-        <ul>
-          <li>Robotic Process Automation</li>
-          <li>Optical Character Recognition</li>
-          <li>Machine Learning Solutions</li>
-          <li>Chatbot Development</li>
-          <li>Sentiment Analysis</li>
-        </ul>
-      </div>
+        <!-- DROPDOWN -->
+        <details class="service-dropdown">
+          <summary>Learn More</summary>
+          <p>{service.long}</p>
 
-      <!-- CARD 3 -->
-      <div class="glass squircle-lg service-card">
-        <h2>Product Engineering</h2>
-
-        <ul>
-          <li>Technology Consulting</li>
-          <li>UI/UX Consulting</li>
-          <li>Agile Product Development</li>
-          <li>Support & Maintenance</li>
-          <li>Dedicated Teams</li>
-        </ul>
+          <a href="/contact" class="btn-primary">
+            Get Service
+          </a>
+        </details>
       </div>
 
     </div>
+  ))}
 
-  </section>
-</BaseLayout>
+</section>

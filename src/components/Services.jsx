@@ -2,25 +2,89 @@ import { useEffect, useRef } from "react";
 import Navibar from "../components/Navbar.jsx";
 
 const services = [
+  // CORE
   {
-    title: "Web Development",
-    desc: "Modern, scalable web apps built with cutting-edge technologies.",
+    title: "Custom Software Development",
+    desc: "Enterprise-grade applications tailored to your business workflows.",
     icon: "💻"
   },
   {
-    title: "AI & Machine Learning",
-    desc: "Intelligent systems that automate and optimize business workflows.",
-    icon: "🤖"
+    title: "Web Development",
+    desc: "Fast, scalable, and modern websites using latest frameworks.",
+    icon: "🌐"
   },
   {
-    title: "Cloud & DevOps",
-    desc: "Secure, scalable infrastructure and seamless deployment pipelines.",
+    title: "Mobile App Development",
+    desc: "iOS & Android apps with seamless performance and UX.",
+    icon: "📱"
+  },
+  {
+    title: "UI/UX Design",
+    desc: "Beautiful, intuitive interfaces focused on user experience.",
+    icon: "🎨"
+  },
+
+  // CLOUD + DEVOPS
+  {
+    title: "Cloud Infrastructure",
+    desc: "Scalable cloud architecture on AWS, Azure, and GCP.",
     icon: "☁️"
   },
   {
+    title: "DevOps & CI/CD",
+    desc: "Automated pipelines for faster and reliable deployments.",
+    icon: "⚙️"
+  },
+  {
+    title: "System Integration",
+    desc: "Connect all your systems into a seamless ecosystem.",
+    icon: "🔗"
+  },
+
+  // AI + DATA
+  {
+    title: "AI & Machine Learning",
+    desc: "Smart systems that automate and optimize operations.",
+    icon: "🤖"
+  },
+  {
+    title: "Data Analytics",
+    desc: "Transform raw data into actionable business insights.",
+    icon: "📊"
+  },
+  {
+    title: "Big Data Solutions",
+    desc: "Handle massive datasets with high performance systems.",
+    icon: "🧠"
+  },
+
+  // SECURITY
+  {
     title: "Cyber Security",
-    desc: "Advanced protection for your systems, data, and infrastructure.",
+    desc: "Protect your infrastructure with advanced security systems.",
     icon: "🔐"
+  },
+  {
+    title: "Penetration Testing",
+    desc: "Identify vulnerabilities before attackers do.",
+    icon: "🛡️"
+  },
+
+  // BUSINESS
+  {
+    title: "IT Consulting",
+    desc: "Strategic technology guidance for business growth.",
+    icon: "📈"
+  },
+  {
+    title: "Outsourcing Solutions",
+    desc: "End-to-end tech outsourcing for startups & enterprises.",
+    icon: "🏢"
+  },
+  {
+    title: "Maintenance & Support",
+    desc: "Reliable ongoing support and system monitoring.",
+    icon: "🛠️"
   }
 ];
 
@@ -39,7 +103,7 @@ export default function Services() {
           "all 0.6s cubic-bezier(0.22, 1, 0.36, 1)";
         card.style.opacity = 1;
         card.style.transform = "translateY(0)";
-      }, i * 150);
+      }, i * 80); // smoother stagger
     });
   }, []);
 
@@ -53,7 +117,7 @@ export default function Services() {
         </h2>
 
         <p className="services-sub">
-          Comprehensive technology solutions designed to scale your business
+          End-to-end technology solutions for modern businesses
         </p>
 
         <div className="services-grid">
@@ -69,8 +133,8 @@ export default function Services() {
 
               <p>{service.desc}</p>
 
-              <a href="/services" className="btn-primary">
-                Learn More
+              <a href="/contact" className="btn-primary">
+                Get Service
               </a>
             </div>
           ))}
