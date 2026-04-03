@@ -1,12 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
 import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.astro";
 import Stats from "../components/Stats.jsx";
 import ServicesPreview from "../components/ServicesPreview.jsx";
-import "../styles/global.css";
 ---
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-left">Eshan</div>
 
@@ -18,28 +19,40 @@ import "../styles/global.css";
   </div>
 
   <div class="nav-right">
-    <a href="#" class="btn">Get Started</a>
+    <a href="#" class="btn-primary">Get Started</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-card">
-    <h1>
-      Building Tomorrow's 
-      <span class="gradient-text">Infrastructure</span>
-    </h1>
+  <div class="hero-overlay"></div>
 
-    <p>
-      We deliver scalable enterprise solutions with cutting-edge technology.
-    </p>
+  <div class="hero-content">
+    <div class="hero-card">
+      <h1>
+        Building Tomorrow's 
+        <span class="gradient-text">Infrastructure</span>
+      </h1>
 
-    <div class="hero-buttons">
-      <a href="#" class="btn-primary">Get Started</a>
-      <a href="#" class="btn-secondary">Learn More</a>
+      <p>
+        We deliver scalable enterprise solutions with cutting-edge technology.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Get Started</a>
+        <a href="#" class="btn-secondary">Learn More</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- STATS -->
+<Stats />
+
+<!-- ✅ SERVICES PREVIEW (THIS WAS MISSING) -->
+<ServicesPreview />
+
+<!-- SCROLL EFFECT -->
 <script>
   const navbar = document.querySelector(".navbar");
 

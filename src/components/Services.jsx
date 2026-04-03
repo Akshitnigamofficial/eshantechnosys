@@ -1,10 +1,27 @@
 import { useEffect, useRef } from "react";
+import Navibar from "../components/Navbar.jsx";
 
 const services = [
-  "Web Development",
-  "AI & Machine Learning",
-  "Cloud & DevOps",
-  "Cyber Security"
+  {
+    title: "Web Development",
+    desc: "Modern, scalable web apps built with cutting-edge technologies.",
+    icon: "💻"
+  },
+  {
+    title: "AI & Machine Learning",
+    desc: "Intelligent systems that automate and optimize business workflows.",
+    icon: "🤖"
+  },
+  {
+    title: "Cloud & DevOps",
+    desc: "Secure, scalable infrastructure and seamless deployment pipelines.",
+    icon: "☁️"
+  },
+  {
+    title: "Cyber Security",
+    desc: "Advanced protection for your systems, data, and infrastructure.",
+    icon: "🔐"
+  }
 ];
 
 export default function Services() {
@@ -12,69 +29,53 @@ export default function Services() {
 
   useEffect(() => {
     cardsRef.current.forEach((card, i) => {
+      if (!card) return;
+
       card.style.opacity = 0;
-      card.style.transform = "translateY(60px) scale(0.95)";
+      card.style.transform = "translateY(40px)";
 
       setTimeout(() => {
         card.style.transition =
-          "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease";
+          "all 0.6s cubic-bezier(0.22, 1, 0.36, 1)";
         card.style.opacity = 1;
-        card.style.transform = "translateY(0) scale(1)";
-      }, i * 150); // 🔥 stagger effect
+        card.style.transform = "translateY(0)";
+      }, i * 150);
     });
   }, []);
 
   return (
-    <section style={styles.wrapper}>
-      <h2 style={styles.heading}>Our Services</h2>
+    <>
+      <Navibar />
 
-      <div style={styles.grid}>
-        {services.map((service, i) => (
-          <div
-            key={i}
-            ref={(el) => (cardsRef.current[i] = el)}
-            style={styles.card}
-            onMouseDown={(e) =>
-              (e.currentTarget.style.transform = "translate(4px,4px)")
-            }
-            onMouseUp={(e) =>
-              (e.currentTarget.style.transform = "translate(0,0)")
-            }
-          >
-            {service}
-          </div>
-        ))}
-      </div>
-    </section>
+      <section className="services-page">
+        <h2 className="services-heading">
+          Our <span className="gradient-text">Services</span>
+        </h2>
+
+        <p className="services-sub">
+          Comprehensive technology solutions designed to scale your business
+        </p>
+
+        <div className="services-grid">
+          {services.map((service, i) => (
+            <div
+              key={i}
+              ref={(el) => (cardsRef.current[i] = el)}
+              className="service-glass-card"
+            >
+              <div className="icon">{service.icon}</div>
+
+              <h3>{service.title}</h3>
+
+              <p>{service.desc}</p>
+
+              <a href="/services" className="btn-primary">
+                Learn More
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
-
-const styles = {
-  wrapper: {
-    padding: "80px 20px",
-    maxWidth: "1100px",
-    margin: "0 auto"
-  },
-
-  heading: {
-    fontSize: "32px",
-    fontWeight: "900",
-    marginBottom: "30px"
-  },
-
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-    gap: "20px"
-  },
-
-  card: {
-    border: "3px solid black",
-    padding: "20px",
-    background: "#fff",
-    fontWeight: "800",
-    boxShadow: "6px 6px 0px black",
-    cursor: "pointer",
-    transition: "transform 0.2s ease"
-  }
-};
