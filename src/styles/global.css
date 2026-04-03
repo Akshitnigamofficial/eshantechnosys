@@ -259,3 +259,117 @@ body::after {
     width: 100%;
   }
 }
+
+/* ===== GLOBAL SECTION SPACING ===== */
+section {
+  padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 16px;
+  }
+}
+
+/* ===== HERO MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-start;
+    padding-top: 120px;
+  }
+
+  .hero-card {
+    text-align: left;
+  }
+}
+
+/* ===== STATS CARDS FIX ===== */
+.stats {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .grid-4 .card {
+    text-align: center;
+  }
+}
+
+/* ===== ABOUT SECTION FIX ===== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+/* ===== INDUSTRIES FIX ===== */
+.industries {
+  text-align: center;
+}
+
+.industries .grid-4 {
+  margin-top: 30px;
+}
+
+/* ===== SERVICES FIX ===== */
+.services .card {
+  min-height: 260px;
+}
+
+/* ===== CONTACT SECTION FINAL FIX ===== */
+.contact-wrapper {
+  margin-top: 40px;
+}
+
+.contact-info .card {
+  padding: 20px;
+}
+
+/* FORM FIX */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* INPUT GRID */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== FOOTER FIX ===== */
+footer {
+  padding: 60px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+}
