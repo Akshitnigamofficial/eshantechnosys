@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.jsx";
+---
+
+<BaseLayout title="Industries">
+  <Navbar client:load />
+
+  <section class="industries-wrapper">
+
+    <h1 class="industries-title">
+      Industries We <span class="gradient-text">Serve</span>
+    </h1>
+
+    <p class="industries-subtitle">
+      Delivering tailored digital solutions across multiple industries
+    </p>
+
+    <!-- GRID -->
+    <div class="industries-grid">
+
+      <div class="glass squircle-lg industry-card">
+        <h2>Finance</h2>
+        <p>Secure fintech platforms, payment systems and banking solutions.</p>
+      </div>
+
+      <div class="glass squircle-lg industry-card">
+        <h2>Healthcare</h2>
+        <p>Digital healthcare systems and patient-centric applications.</p>
+      </div>
+
+      <div class="glass squircle-lg industry-card">
+        <h2>E-commerce</h2>
+        <p>High-performance commerce platforms and scalable solutions.</p>
+      </div>
+
+      <div class="glass squircle-lg industry-card">
+        <h2>Startups</h2>
+        <p>Rapid MVP development and scalable product engineering.</p>
+      </div>
+
+      <div class="glass squircle-lg industry-card">
+        <h2>Education</h2>
+        <p>Modern e-learning platforms and smart education tools.</p>
+      </div>
+
+      <div class="glass squircle-lg industry-card">
+        <h2>Enterprise</h2>
+        <p>Robust enterprise systems and complex integrations.</p>
+      </div>
+
+    </div>
+
+  </section>
+</BaseLayout>

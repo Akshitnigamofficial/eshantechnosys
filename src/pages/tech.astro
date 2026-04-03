@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.jsx";
+---
+
+<BaseLayout title="Tech Stack">
+  <Navbar client:load />
+
+  <section class="tech-wrapper">
+
+    <h1 class="tech-title">
+      Our <span class="gradient-text">Technology Stack</span>
+    </h1>
+
+    <p class="tech-subtitle">
+      We leverage modern technologies to build scalable and high-performance solutions.
+    </p>
+
+    <!-- GRID -->
+    <div class="tech-grid">
+
+      <div class="glass squircle-pill tech-item">React</div>
+      <div class="glass squircle-pill tech-item">Next.js</div>
+      <div class="glass squircle-pill tech-item">Node.js</div>
+      <div class="glass squircle-pill tech-item">Python</div>
+      <div class="glass squircle-pill tech-item">AWS</div>
+      <div class="glass squircle-pill tech-item">Docker</div>
+      <div class="glass squircle-pill tech-item">Kubernetes</div>
+      <div class="glass squircle-pill tech-item">MongoDB</div>
+      <div class="glass squircle-pill tech-item">PostgreSQL</div>
+      <div class="glass squircle-pill tech-item">GraphQL</div>
+      <div class="glass squircle-pill tech-item">Firebase</div>
+      <div class="glass squircle-pill tech-item">Tailwind</div>
+
+    </div>
+
+  </section>
+</BaseLayout>

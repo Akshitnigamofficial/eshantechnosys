@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.jsx";
+---
+
+<BaseLayout title="Services">
+  <Navbar client:load />
+
+  <section class="services-wrapper">
+
+    <h1 class="services-title">
+      Our <span class="gradient-text">Services</span>
+    </h1>
+
+    <p class="services-subtitle">
+      Comprehensive solutions to transform your business digitally
+    </p>
+
+    <!-- GRID -->
+    <div class="services-grid">
+
+      <!-- CARD 1 -->
+      <div class="glass squircle-lg service-card">
+        <h2>Digital Transformation</h2>
+
+        <ul>
+          <li>Enterprise Software Development</li>
+          <li>Document Management System</li>
+          <li>Business Process Management</li>
+          <li>Application Modernization</li>
+          <li>DevOps & Cloud Services</li>
+        </ul>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="glass squircle-lg service-card">
+        <h2>AI & Machine Learning</h2>
+
+        <ul>
+          <li>Robotic Process Automation</li>
+          <li>Optical Character Recognition</li>
+          <li>Machine Learning Solutions</li>
+          <li>Chatbot Development</li>
+          <li>Sentiment Analysis</li>
+        </ul>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="glass squircle-lg service-card">
+        <h2>Product Engineering</h2>
+
+        <ul>
+          <li>Technology Consulting</li>
+          <li>UI/UX Consulting</li>
+          <li>Agile Product Development</li>
+          <li>Support & Maintenance</li>
+          <li>Dedicated Teams</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+</BaseLayout>

@@ -1,0 +1,438 @@
+bbody {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+
+  background: #000000; /* 🔥 PURE BLACK */
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+
+  filter: blur(140px);
+  z-index: -1;
+}
+
+/* PURPLE */
+body::before {
+  top: -100px;
+  left: -100px;
+  background: #7c3aed;
+}
+
+/* PINK */
+body::after {
+  bottom: -100px;
+  right: -100px;
+  background: #ec4899;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+h1, h2 {
+  letter-spacing: -0.5px;
+}
+
+/* NAVBAR WRAPPER */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* CONTAINER */
+.nav-container {
+  width: 90%;
+  max-width: 1100px;
+  padding: 12px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  font-weight: 700;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+/* CTA */
+.nav-cta {
+  margin-left: 20px;
+}
+
+/* MENU BUTTON (MOBILE) */
+.menu-btn {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: absolute;
+  top: 80px;
+  width: 90%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 🔥 RESPONSIVE BREAKPOINT */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* HERO WRAPPER */
+.hero-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* BACKGROUND GLOW */
+.bg-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #a855f7, #ec4899);
+  filter: blur(120px);
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* HERO CARD */
+.hero-card {
+  max-width: 850px;
+  padding: 60px 50px;
+  text-align: center;
+}
+
+/* TAG */
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+/* TITLE */
+.hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* GRADIENT TEXT */
+.gradient-text {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SUBTITLE */
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: 16px;
+  opacity: 0.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BUTTONS */
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+}
+
+/* WRAPPER */
+.services-wrapper {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* TITLE */
+.services-title {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+/* SUBTITLE */
+.services-subtitle {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* GRID */
+.services-grid {
+  margin-top: 60px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.service-card {
+  padding: 30px;
+  text-align: left;
+}
+
+/* CARD TITLE */
+.service-card h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+/* LIST */
+.service-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-card li {
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-title {
+    font-size: 30px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+}
+
+/* WRAPPER */
+.industries-wrapper {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* TITLE */
+.industries-title {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+/* SUBTITLE */
+.industries-subtitle {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* GRID */
+.industries-grid {
+  margin-top: 60px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.industry-card {
+  padding: 30px;
+  text-align: left;
+}
+
+/* TITLE */
+.industry-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.industry-card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industries-title {
+    font-size: 30px;
+  }
+
+  .industry-card {
+    padding: 20px;
+  }
+}
+
+/* WRAPPER */
+.tech-wrapper {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* TITLE */
+.tech-title {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+/* SUBTITLE */
+.tech-subtitle {
+  margin-top: 10px;
+  opacity: 0.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* GRID */
+.tech-grid {
+  margin-top: 60px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ITEM (PILL STYLE) */
+.tech-item {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .tech-title {
+    font-size: 30px;
+  }
+
+  .tech-grid {
+    gap: 12px;
+  }
+
+  .tech-item {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+/* WRAPPER */
+.contact-wrapper {
+  padding: 120px 20px;
+}
+
+/* GRID */
+.contact-grid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* LEFT SIDE */
+.contact-title {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.contact-subtitle {
+  margin-top: 15px;
+  opacity: 0.7;
+}
+
+.contact-details {
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+/* FORM CARD */
+.contact-form {
+  padding: 30px;
+}
+
+/* FORM */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* INPUTS */
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  background: rgba(255,255,255,0.08);
+  color: white;
+
+  outline: none;
+}
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-title {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.jsx";
+import Hero from "../components/Hero.jsx";
+import Stats from "../components/Stats.jsx";
+import ServicesPreview from "../components/ServicesPreview.jsx";
+---
+
+<BaseLayout>
+  <Navbar client:load />
+  <Hero client:load />
+  <Stats client:load />
+  <ServicesPreview client:load />
+</BaseLayout>
