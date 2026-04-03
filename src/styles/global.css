@@ -1,23 +1,40 @@
-bbody {
+body {
   margin: 0;
   font-family: sans-serif;
   color: white;
 
-  background: #000000; /* 🔥 PURE BLACK */
+  background:
+    linear-gradient(rgba(5,5,15,0.85), rgba(5,5,15,0.95)),
+    url("/bg.jpg");
 
-  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
   overflow-x: hidden;
 }
 
-body::before,
+body::before {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #7c3aed;
+  filter: blur(160px);
+  top: -100px;
+  left: -100px;
+  z-index: -1;
+}
+
 body::after {
   content: "";
   position: fixed;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-
-  filter: blur(140px);
+  width: 500px;
+  height: 500px;
+  background: #ec4899;
+  filter: blur(160px);
+  bottom: -100px;
+  right: -100px;
   z-index: -1;
 }
 
@@ -55,15 +72,9 @@ h1, h2 {
 
 /* CONTAINER */
 .nav-container {
-  width: 90%;
-  max-width: 1100px;
-  padding: 12px 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
 }
-
 /* LOGO */
 .logo {
   font-weight: 700;
@@ -136,10 +147,9 @@ h1, h2 {
 }
 
 /* HERO CARD */
-.hero-card {
-  max-width: 850px;
-  padding: 60px 50px;
-  text-align: center;
+..hero-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(30px);
 }
 
 /* TAG */
@@ -435,4 +445,19 @@ h1, h2 {
   .contact-title {
     font-size: 30px;
   }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+
+  border-radius: 24px;
 }
